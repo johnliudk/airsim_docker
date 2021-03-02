@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  blocks:
+    image: adamrehn/ue4-runtime:18.04-cudagl10.2
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=1
+      - NVIDIA_DRIVER_CAPABILITIES=all
+    volumes:
+      - ${PWD}/Binaries:/home/ue4/Binaries
+      - ${PWD}/settings_headless.json:/home/ue4/Documents/AirSim/settings.json
+    command: bash /home/ue4/Binaries/Blocks/LinuxNoEditor/Blocks.sh -RenderOffScreen -opengl4
+networks:
+  default:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.10.0/24
