@@ -4,7 +4,6 @@
   - [UE4 Docker for running AirSim](#ue4-docker-for-running-airsim)
     - [Build UE4 Docker](#build-ue4-docker)
     - [Build AirSim image](#build-airsim-image)
-  - [UE4-runtime for running packaged AirSim binaries](#ue4-runtime-for-running-packaged-airsim-binaries)
 - [Run AirSim UE4](#run-airsim-ue4)
   - [Start container](#start-container)
   - [Start UE4 Editor](#start-ue4-editor)
@@ -24,7 +23,7 @@
 - Build UE4 with CUDA. Only full image of UE4 Engine >=4.25.0 has Vulkan support.
 
 ```bash
-ue4-docker build 4.26.1 --cuda=10.2
+ue4-docker build 4.26.2 --cuda=10.2
 ```
 
 - (Optional) Clean up the intermediate images from the build to save space
@@ -36,15 +35,7 @@ ue4-docker clean --source
 ### Build AirSim image
 
 ```bash
-docker build -t airsim_source:4.26.1-cudagl10.2 --build-arg BASE_IMAGE=adamrehn/ue4-full:4.26.1-cudagl10.2 .
-```
-
-## UE4-runtime for running packaged AirSim binaries
-
-Find all available tags from [GitHub](https://github.com/adamrehn/ue4-runtime).
-
-```bash
-docker pull adamrehn/ue4-runtime:virtualgl
+docker build -t airsim_source:4.26.2-cudagl10.2 --build-arg BASE_IMAGE=adamrehn/ue4-full:4.26.2-cudagl10.2 .
 ```
 
 # Run AirSim UE4
@@ -52,7 +43,7 @@ docker pull adamrehn/ue4-runtime:virtualgl
 ## Start container
 
 ```bash
-./run_airsim_source.sh airsim_source:4.26.1-cudagl10.2
+./run_airsim_source.sh airsim_source:4.26.2-cudagl10.2
 ```
 
 ## Start UE4 Editor
