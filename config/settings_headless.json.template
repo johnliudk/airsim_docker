@@ -2,7 +2,8 @@
   "SeeDocsAt": "https://github.com/Microsoft/AirSim/blob/master/docs/settings_json.md",
   "SettingsVersion": 1.2,
   "SimMode": "Multirotor",
-  "ClockSpeed": 5.0,
+  "ViewMode": "NoDisplay",
+  "ClockSpeed": 1.0,
   "Vehicles": {
     "SimpleFlight": {
       "VehicleType": "SimpleFlight",
