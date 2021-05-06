@@ -43,7 +43,7 @@ docker build -t airsim_source:4.26.2-cudagl10.2 --build-arg BASE_IMAGE=adamrehn/
 ## Start container
 
 ```bash
-./run_airsim_source.sh airsim_source:4.26.2-cudagl10.2
+./script/run_airsim_source.sh airsim_source:4.26.2-cudagl10.2
 ```
 
 ## Start UE4 Editor
@@ -71,10 +71,10 @@ Specific save directory with `-archivedirectory` and project directory with `-pr
 
 ```bash
 # with VirtualGL
-./run_airsim_binary.sh
+./script/run_airsim_binary.sh
 
 # complete headless
-./run_airsim_binary_headless.sh
+./script/run_airsim_binary_headless.sh
 ```
 
 ## Run binary
