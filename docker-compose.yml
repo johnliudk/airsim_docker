@@ -8,8 +8,9 @@ services:
       - NVIDIA_DRIVER_CAPABILITIES=all
     volumes:
       - ${PWD}/Binaries:/home/ue4/Binaries
-      - ${PWD}/settings_headless.json:/home/ue4/Documents/AirSim/settings.json
-    command: bash /home/ue4/Binaries/Blocks/LinuxNoEditor/Blocks.sh -RenderOffScreen
+      - ${PWD}/config/settings_headless.json:/home/ue4/Documents/AirSim/settings.json
+    command: bash /home/ue4/Binaries/Blocks-1.5.0/LinuxNoEditor/Blocks.sh -RenderOffScreen
+    runtime: nvidia
 networks:
   default:
     driver: bridge
